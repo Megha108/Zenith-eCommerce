@@ -1,13 +1,8 @@
 import React from 'react';
-import './SlidetextDescription.css';
+import './SliderSection.css';
 
 const SliderTextDescription = () => {
-  const handleShopNow = () => {
-    // Add your shop now functionality here
-    console.log('Shop Now button clicked');
-    // You can add navigation or other actions
-    alert('Redirecting to shop page...');
-  };
+  
 
   return (
     <div className="slider-text-content">
@@ -15,9 +10,7 @@ const SliderTextDescription = () => {
       <p className="text-description">
         Discover our exclusive collection of premium lingerie that combines comfort with elegance.
       </p>
-      <button className="shop-now-btn" onClick={handleShopNow}>
-        Shop Now
-      </button>
+      
     </div>
   );
 };

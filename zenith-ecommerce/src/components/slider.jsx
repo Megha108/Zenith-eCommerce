@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Slider.css';
+import './SliderSection.css';
 
 const Slider = () => {
     const [currentSlide, setCurrentSlide] = useState(0);

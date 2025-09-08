@@ -70,3 +70,37 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  background: linear-gradient(45deg, #ffffff, #ff9ebb, #ffffff, #ffffff);
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.content-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
+}

@@ -1,15 +1,17 @@
 /* Header container */
 header#site-header {
   display: flex;
-  justify-content: space-between; /* Space between left, center, right */
+  justify-content: space-between;
   align-items: center;
-  padding: 0.10rem 2rem;
+  padding: 1rem clamp(1.5rem, 5vw, 3rem); /* Dynamic padding */
   background: #fff;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0);
   position: sticky;
   top: 0;
   z-index: 1000;
-  width: 158%;
+  width: 177.18%;
+  max-width: 100vw;
+  box-sizing: border-box;
 }
 
 /* Search section - Left */
@@ -20,25 +22,6 @@ header#site-header {
   min-width: 250px;
 }
 
-/* Logo - Center */
-.header-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-}
-
-/* Actions section - Right */
-.header-actions {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1rem;
-  min-width: 280px;
-}
-
-/* Search Form Styles */
 .search-form {
   display: flex;
   align-items: center;
@@ -81,15 +64,31 @@ header#site-header {
   fill: white;
 }
 
-/* Logo styling */
+/* Logo - Center */
+.header-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
 .logo {
-  height: 6em;
-  padding: 0em;
-  will-change: filter;
+  height: clamp(6em, 8vw, 0em); /* Responsive logo size */
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 2em 2em #646cffaa);
+}
+
+/* Actions - Right */
+.header-actions {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: clamp(0.8rem, 2vw, 1rem); /* Responsive gap */
+  min-width: 280px;
 }
 
 /* Icon Buttons */
@@ -164,20 +163,106 @@ header#site-header {
   box-shadow: 0 6px 15px rgba(138, 79, 255, 0.4);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Search icon (mobile only, hidden on desktop) */
+.search-icon-only {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.6rem;
+  border-radius: 50%;
+}
+
+.search-icon-only:hover {
+  background: rgba(138, 79, 255, 0.1);
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 700px) {
   header#site-header {
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
-  }
-  
-  .header-search, .header-center, .header-actions {
+    flex-direction: column; /* Stack logo and actions vertically */
+    align-items: stretch;    /* Let actions stretch full width */
+    padding: 0.5rem 1rem;
     width: 100%;
+    position: relative;
+    height: auto;
+  }
+
+  /* Logo on top, centered */
+  .header-center {
+    position: relative;
+    transform: none;
+    margin-bottom: 0.5rem; /* Space between logo and buttons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+  }
+
+  .logo {
+    height: 4.5em; /* Keep responsive size */
+  }
+
+  /* Actions aligned to the right */
+  .header-actions {
+    order: 2;
+    display: flex;
+    justify-content: flex-end; /* Align all buttons to the right */
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%; /* Stretch full width to keep buttons right-aligned */
+    flex-wrap: nowrap; /* Keep them in one row */
+  }
+
+  /* Hide full search bar and show search icon */
+  .header-search .search-form {
+    display: none;
+  }
+
+  .search-icon-only {
+    display: flex;
+    align-items: center;
     justify-content: center;
   }
-  
-  .search-form {
-    max-width: 100%;
+
+  /* Ensure login & wishlist are visible */
+  .login-button, .wishlist-btn {
+    display: flex;
+  }
+
+  /* Mobile menu button */
+  .mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+  }
+
+  .mobile-menu-btn span {
+    width: 20px;
+    height: 2px;
+    background: #333;
+    margin: 2px 0;
+    transition: 0.3s;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .logo {
+    height: 3.5em;
+  }
+
+  .header-actions {
+    gap: 0.3rem;
+  }
+
+  .nav-icon-button svg {
+    width: 18px;
+    height: 18px;
   }
 }

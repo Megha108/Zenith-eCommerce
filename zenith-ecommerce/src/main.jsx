@@ -12,8 +12,9 @@ createRoot(document.getElementById('root')).render(
   <Header />
   <Navbar/>
   <main>
-  <SliderTextDescription/>
   <Slider/>
+  <SliderTextDescription/>
+  
   </main>
     <App />
   </StrictMode>,
