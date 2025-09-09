@@ -10,7 +10,10 @@
   justify-content: center;
   z-index: 100;
 }
-
+.shop-now-btn{
+  margin-left: -150%;
+  margin-top: 55%;
+}
 /* Make sure the parent container has position: relative */
 .parent-container {
   position: relative;

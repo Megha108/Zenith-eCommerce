@@ -9,7 +9,7 @@
   border-left: hidden;
 
   /* Dynamic width using Lerp (clamp) */
-  width: clamp(172.85%, 90vw, 172.85%);
+  width: clamp(200.18%, 90vw, 172.85%);
   max-width: 100vw; /* prevent overflow */
 }
 
