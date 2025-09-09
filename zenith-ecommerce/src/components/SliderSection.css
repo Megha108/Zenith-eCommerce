@@ -165,7 +165,7 @@
   .slider-container {
     width: 45%;
     height: 50vh;
-    top: 120px;
+    top: 150px;
   }
   
   .slider-text-content {
@@ -206,9 +206,11 @@
     position: static;
     width: 100%;
     height: auto;
-    margin: 1rem 0;
+    margin: .1rem -0.5rem;
   }
-  
+  .slider-btn{
+    padding-bottom: 42px;
+  }
   .slider-container {
     order: 2;
     height: 40vh;
@@ -218,7 +220,7 @@
     order: 1;
     text-align: center;
     align-items: center;
-    padding: 1.5rem;
+    padding: 1.6rem;
     height: auto;
   }
   
@@ -261,7 +263,7 @@
   /* Fixed size and centered slider */
   .slider-container {
     position: relative;
-    width: 80%;
+    width: 60%;
     height: 300px;
     margin: 0 auto;
     right: auto;

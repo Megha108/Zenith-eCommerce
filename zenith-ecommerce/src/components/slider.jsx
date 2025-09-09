@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './SliderSection.css';
 
+
 const Slider = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const slides = [1, 2, 3, 4, 5]; // 5 slides for example
+    const slides = [1, 2, 3, 4, 5];
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -23,7 +24,6 @@ const Slider = () => {
 
     return (
         <div className="slider-container">
-
             <div className="slider">
                 {slides.map((slide, index) => {
                     const slidePosition = (index - currentSlide + slides.length) % slides.length;
@@ -44,7 +44,9 @@ const Slider = () => {
                     return (
                         <div key={index} className={slideClass}>
                             <div className="slide-content">
-                                Slide {slide}
+                                <h3>New Collection {slide}</h3>
+                                <p>Discover our latest designs</p>
+                                <button className="shop-now-btn">Shop Now</button>
                             </div>
                         </div>
                     );

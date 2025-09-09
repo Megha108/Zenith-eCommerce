@@ -4,18 +4,23 @@ import './index.css'
 import App from './App.jsx'
 import Header from './components/header.jsx'
 import Navbar from './components/navbar.jsx'
-import Slider from './components/slider.jsx'
-import SliderTextDescription from './components/SlidetextDescription.jsx'
+import { BrowserRouter } from "react-router-dom";
+import AllPages from "./pages/allpages.jsx"; // ✅ import the router
+import Footer from './components/footer.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+  <BrowserRouter>
   <Header />
   <Navbar/>
   <main>
-  <Slider/>
-  <SliderTextDescription/>
+  
+    <AllPages />
   
   </main>
+  
     <App />
+    <Footer/>
+    </BrowserRouter>
   </StrictMode>,
 )
