@@ -1,10 +1,12 @@
+/* Footer */
 .footer {
   background: #1a1a1a;
   color: #fff;
   padding: 1.5rem 1rem;
-  width: 200.85%;  /* ⚠ desktop custom width */
+  width: 100vw;     /* ✅ Always full width */
   margin-top: auto;
 }
+
 
 .footer-container {
   display: flex;
