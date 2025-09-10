@@ -44,8 +44,7 @@ const Slider = () => {
                     return (
                         <div key={index} className={slideClass}>
                             <div className="slide-content">
-                                <h3>New Collection {slide}</h3>
-                                <p>Discover our latest designs</p>
+                                
                                 <button className="shop-now-btn">Shop Now</button>
                             </div>
                         </div>
