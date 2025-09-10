@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import './Header.css';
-import logo from '../assets/logo1.png';
+import "../css/Header.css";
+
+import logo from "../../assets/logo1.png";
 
 function Header() {
   const [searchQuery, setSearchQuery] = useState('');

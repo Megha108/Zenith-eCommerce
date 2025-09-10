@@ -1,6 +1,6 @@
 import React, { StrictMode } from 'react';
-import SliderTextDescription from '../components/SlidetextDescription';
-import Slider from '../components/slider';
+import SliderTextDescription from '../components/HOMEPAGE/SlidetextDescription';
+import Slider from '../components/HOMEPAGE/slider';
 
 const HomePage = () => {
   
