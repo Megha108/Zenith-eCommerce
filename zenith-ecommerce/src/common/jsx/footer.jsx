@@ -6,6 +6,11 @@ import "../css/footer.css";
 export default function Footer() {
   return (
     <footer className="footer">
+      {/* 🌊 Animated Waves */}
+      <div className="wave wave1"></div>
+      <div className="wave wave2"></div>
+      <div className="wave wave3"></div>
+
       <div className="footer-container">
 
         {/* Logo & Address */}

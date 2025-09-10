@@ -1,12 +1,18 @@
 /* Footer */
-.footer {
-  background: #1a1a1a;
-  color: #fff;
-  padding: 1.5rem 1rem;
-  width: 100vw;     /* ✅ Always full width */
-  margin-top: auto;
+html, body {
+  overflow-x: hidden;
 }
 
+.footer {
+  position: relative;
+  background: transparent;
+  /* ✅ Transparent background */
+  color: #fff;
+  padding: 3rem 1rem 1.5rem;
+  width: 100vw;
+  margin-top: auto;
+  overflow: hidden;
+}
 
 .footer-container {
   display: flex;
@@ -89,87 +95,107 @@
   box-sizing: border-box;
 }
 
-/* ======================
-   ✅ Responsive Fixes
-   ====================== */
-@media (max-width: 1100px) {
-  .footer {
-    width: 136.8%; /* ✅ reset width */
-    padding: 1.2rem 0.8rem;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;     /* ✅ center horizontally */
-    text-align: center;      /* ✅ center text */
-    gap: 1.5rem;
-  }
-
-  .footer-section {
-    flex: unset;
-    min-width: 100%;
-    text-align: center;      /* ✅ section content centered */
-  }
-
-  .social-icons {
-    justify-content: center; /* ✅ icons centered */
-  }
-
-  .footer-bottom {
-    text-align: center;      /* ✅ copyright centered */
-  }
+/* 🌊 Waves fill footer height */
+/* 🌊 Waves fill and touch footer bottom */
+.wave {
+  position: absolute;
+  bottom: 0;   /* ✅ anchored to bottom */
+  left: 0;
+  width: 200%;               /* keep wide */
+  height: 42vw;              /* adjust height for bigger waves */
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'><path d='M0,40 C300,80 900,0 1200,40 L1200,120 L0,120 Z' fill='%23c2185b' fill-opacity='0.9'/></svg>");
+  background-size: 1200px 600px;
+  background-repeat: repeat-x;
+  animation: waveTop 30s ease-in-out infinite alternate; /* 👈 back & forth */
+  z-index: 1;
+  pointer-events: none;
 }
-/* Tablet screens */
-@media (max-width: 768px) {
-  .footer {
-    width: 100%; /* ✅ reset width */
-    padding: 1.2rem 0.8rem;
-  }
 
-  .footer-container {
-    flex-direction: column;
-    align-items: center;     /* ✅ center horizontally */
-    text-align: center;      /* ✅ center text */
-    gap: 1.5rem;
-  }
+.wave1 {
+  animation-duration: 30s;
+  opacity: 0.7;
+}
 
-  .footer-section {
-    flex: unset;
-    min-width: 100%;
-    text-align: center;      /* ✅ section content centered */
-  }
+.wave2 {
+  animation-duration: 30s;
+  animation-delay: -6s;
+  opacity: 0.5;
+}
 
-  .social-icons {
-    justify-content: center; /* ✅ icons centered */
-  }
+.wave3 {
+  animation-duration: 30s;
+  animation-delay: -12s;
+  opacity: 0.3;
+}
 
-  .footer-bottom {
-    text-align: center;      /* ✅ copyright centered */
+/* ✅ Animate horizontal back & forth */
+@keyframes waveTop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1200px); /* full wave width */
   }
 }
 
-/* Small mobile screens */
-@media (max-width: 480px) {
-  .footer {
-    width: 100%; /* ✅ reset width */
-    padding: 1rem 0.5rem;
-  }
 
-  .footer-section h4 {
-    font-size: 14px;
-  }
-
-  .footer-address,
-  .footer-bottom {
-    font-size: 12px;
-    text-align: center;      /* ✅ ensure center on smallest screens */
-  }
-
-  .social-icons a {
-    font-size: 18px;
-  }
-
-  .footer-container {
-    gap: 1rem;
-  }
+/* Footer Content */
+.footer-container,
+.footer-bottom {
+  position: relative;
+  z-index: 2;
 }
+
+
+  @media (max-width: 768px) {
+    .footer {
+      width: 100%;
+      padding: 1.2rem 0.8rem;
+    }
+
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    .footer-section {
+      flex: unset;
+      min-width: 100%;
+      text-align: center;
+    }
+
+    .social-icons {
+      justify-content: center;
+    }
+
+    .footer-bottom {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer {
+      width: 100%;
+      padding: 1rem 0.5rem;
+    }
+
+    .footer-section h4 {
+      font-size: 14px;
+    }
+
+    .footer-address,
+    .footer-bottom {
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .social-icons a {
+      font-size: 18px;
+    }
+
+    .footer-container {
+      gap: 1rem;
+    }
+  }

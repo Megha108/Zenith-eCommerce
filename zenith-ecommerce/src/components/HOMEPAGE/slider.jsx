@@ -44,7 +44,7 @@ const Slider = () => {
                     return (
                         <div key={index} className={slideClass}>
                             <div className="slide-content">
-                                
+
                                 <button className="shop-now-btn">Shop Now</button>
                             </div>
                         </div>
@@ -52,8 +52,20 @@ const Slider = () => {
                 })}
             </div>
 
-            <button className="slider-btn prev" onClick={prevSlide}>‹</button>
-            <button className="slider-btn next" onClick={nextSlide}>›</button>
+            {/* Left Arrow */}
+            <button className="slider-btn prev" onClick={prevSlide} aria-label="Previous Slide">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                    <path d="M15 4l-8 8 8 8V4z" />
+                </svg>
+            </button>
+
+            {/* Right Arrow */}
+            <button className="slider-btn next" onClick={nextSlide} aria-label="Next Slide">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                    <path d="M9 4v16l8-8-8-8z" />
+                </svg>
+            </button>
+
         </div>
     );
 };
